@@ -1,21 +1,22 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Dropdown from '../components/ui/dropdown';
+import Pagination from '../components/ui/pagination';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Dropdown',
-  component: Dropdown,
+  title: 'Example/Pagination',
+  component: Pagination,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    linkcolor: { control: 'boolean' },  
   },
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof Pagination>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
+const Template: ComponentStory<typeof Pagination> = (args) => (
+  <Pagination {...args} />
 );
 
 export const Primary = Template.bind({});
@@ -56,5 +57,11 @@ Outline.args = {
 export const List = Template.bind({});
 List.args = {
   children: 'List',
-  list: [{ name: 'hreusw' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
+  list: [{number:1},{number:2},{number:3},{number:4},{number:5}],
 };
+
+export const Linkcolor = Template.bind({});
+Linkcolor.args = {
+  children: 'List',
+  linkcolor: false
+}

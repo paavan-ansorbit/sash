@@ -6,6 +6,8 @@ export interface IAvatarProps {
   rounded?: boolean;
   outline?: boolean;
   size?: 'small' | 'normal' | 'large';
+
+  shadow?: boolean;
 }
 
 const Avatar: React.FC<IAvatarProps> = (props) => {
@@ -19,7 +21,11 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
           borderRadius: props.rounded ? 100 : 20,
           width: props.size == 'small' ? 100 : 200,
           height: props.size == 'small' ? 100 : 200,
-          outline: props.outline ? 'dashed' : ''
+
+          boxShadow: props.shadow
+            ? '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+            : 'none',
+          outline: props.outline ? 'dashed' : '',
         }}
         src="https://i.pravatar.cc/200"
         alt="hello world"

@@ -1,22 +1,20 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Dropdown from '../components/ui/dropdown';
+import Tags from '../components/ui/tags';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Dropdown',
-  component: Dropdown,
+  title: 'Example/Tags',
+  component: Tags,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof Tags>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
-);
+const Template: ComponentStory<typeof Tags> = (args) => <Tags {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -53,8 +51,3 @@ Outline.args = {
   outline: true,
 };
 
-export const List = Template.bind({});
-List.args = {
-  children: 'List',
-  list: [{ name: 'hreusw' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
-};

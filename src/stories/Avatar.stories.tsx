@@ -46,3 +46,9 @@ Outline.args = {
   children: 'Outline',
   outline: true,
 };
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  children: 'Shadow',
+  shadow: true,
+};

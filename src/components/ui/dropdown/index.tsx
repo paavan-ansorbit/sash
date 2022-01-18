@@ -4,11 +4,9 @@ import Pointer from '../../../icons/pointer';
 
 export interface IDropdown {
   color?: 'primary' | 'secondary' | 'gray';
+  list?:{name:String}[]
   rounded?: boolean;
-  disable?: boolean;
-  icon?: String;
   outline?: boolean;
-  hideicon?: boolean;
   pointer?: boolean;
   size?: 'small' | 'normal' | 'large';
 }
@@ -26,10 +24,15 @@ const Dropdown: React.FC<IDropdown> = ((props) => {
         // backgroundColor:props.disable? 'gray':''
       }}
     >
-      <option value="hello">1</option>
-      <option value="hello">2</option>
-      <option value="hello">3</option>
-      <option value="hello">4</option>
+      {console.log(props.list)}
+      {!!props.list && props.list.map((i) => (
+        <option
+        style={{ backgroundColor: props.color === 'primary' ? 'red' : 'green' }}
+      >
+        {i.name}
+      </option>
+      ))}
+      
     </select>
   );
 }

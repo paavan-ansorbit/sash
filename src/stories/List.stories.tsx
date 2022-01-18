@@ -1,22 +1,21 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Dropdown from '../components/ui/dropdown';
+import List from '../components/ui/list';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Dropdown',
-  component: Dropdown,
+  title: 'Example/List',
+  component: List,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    lists: { control: 'boolean'}
   },
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof List>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
-);
+const Template: ComponentStory<typeof List> = (args) => <List {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -53,8 +52,14 @@ Outline.args = {
   outline: true,
 };
 
-export const List = Template.bind({});
-List.args = {
-  children: 'List',
-  list: [{ name: 'hreusw' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
+export const Array = Template.bind({});
+Array.args = {
+  children: 'Array',
+  array: [{ name: 'hreusw' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
+};
+
+export const ListStyle = Template.bind({});
+ListStyle.args = {
+  children: 'ListStyle',
+  lists: true,
 };

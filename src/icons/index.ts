@@ -1,0 +1,9 @@
+export {default as Calendar} from './calendar';
+export {default as Upload} from './upload';
+export {default as Comment} from './comment';
+export {default as Download} from './download';
+export {default as Like} from './like';
+export {default as Right} from './right';
+export {default as Plus} from './plus';
+export {default as Pointer} from './pointer';
+export {default as Link} from './link';

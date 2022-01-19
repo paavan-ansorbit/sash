@@ -7,34 +7,30 @@ export default {
   title: 'Example/MyButton',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    bgcolor: { control: 'color' },
+    icon: {control:'text'},
     size: {
       control: { type: 'radio' },
       options: ['large', 'small', 'normal'],
-    },
-    icon: {
-      control: { type: 'radio' },
-      options: ['Calendar', 'Pointer'],
     },
     rounded: { control: 'boolean' },
     shadow: { control: 'boolean' },
     disabled: { control: 'boolean' },
     hideicon: { control: 'boolean' },
     outline: { control: 'boolean' },
+    opacity: { control: 'number' },
+    textcolor: { control: 'color' },
+    iconcolor: { control: 'color' },
+    bordercolor:{control: 'color'}
   },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
-  color: 'secondary'
+export const BGColor = Template.bind({});
+BGColor.args = {
+  children: 'BGColor',
+  bgcolor: '#ffb0b0',
 };
 
 export const Large = Template.bind({});
@@ -64,8 +60,7 @@ Outline.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Disabled',
-  disable: true,
-  pointer:true
+  disable: true
 };
 
 export const Icon = Template.bind({});
@@ -77,11 +72,33 @@ Icon.args = {
 export const Hideicon = Template.bind({});
 Hideicon.args = {
   children: 'HideIcon',
-  hideicon: true
+  hideicon: false
 };
 
 export const Shadow = Template.bind({});
 Shadow.args = {
   children: 'Shadow',
   shadow: true
+};
+
+export const Opacity = Template.bind({});
+Opacity.args = {
+  children: 'Opacity',
+};
+
+export const Textcolor = Template.bind({});
+Textcolor.args = {
+  children: 'Textcolor',
+  textcolor: 'black'
+};
+export const IconColor = Template.bind({});
+IconColor.args = {
+  children: 'IconColor',
+  iconcolor: 'black'
+};
+
+export const  Bordercolor = Template.bind({});
+Bordercolor.args = {
+  children: 'Bordercolor',
+  bordercolor: 'white'
 }

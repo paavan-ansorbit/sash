@@ -1,3 +1,4 @@
+//https://css-tricks.com/understanding-web-accessibility-color-contrast-guidelines-and-ratios/
 function hexToRgb(hex: string) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result

@@ -9,6 +9,7 @@ import {
   Right,
   Plus,
   Pointer,
+  Arrowdown,
 } from '../../../icons';
 
 interface IconProps {
@@ -37,6 +38,8 @@ const Icon = ({icon,className ,style}: IconProps): React.ReactElement => {
       return <Plus />;
     } else if (icon === 'Pointer') {
       return <Pointer />;
+    } else if (icon === 'Arrowdown') {
+      return <Arrowdown />;
     }
   };
   return <div className={className} style={style}>{iconelement(icon)}</div>;

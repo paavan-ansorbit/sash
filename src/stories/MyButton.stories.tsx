@@ -8,7 +8,7 @@ export default {
   component: Button,
   argTypes: {
     bgcolor: { control: 'color' },
-    icon: {control:'text'},
+    icon: { control: 'text' },
     size: {
       control: { type: 'radio' },
       options: ['large', 'small', 'normal'],
@@ -21,7 +21,9 @@ export default {
     opacity: { control: 'number' },
     textcolor: { control: 'color' },
     iconcolor: { control: 'color' },
-    bordercolor:{control: 'color'}
+    bordercolor: { control: 'color' },
+    buttonposition: { control: 'boolean' },
+    loading: { control: 'boolean' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -101,4 +103,16 @@ export const  Bordercolor = Template.bind({});
 Bordercolor.args = {
   children: 'Bordercolor',
   bordercolor: 'white'
+};
+
+export const ButtonPosition = Template.bind({});
+ButtonPosition.args = {
+  children: 'ButtonPosition',
+  buttonposition: true
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  children: 'Loading',
+  loading: true
 }

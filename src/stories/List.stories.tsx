@@ -9,24 +9,30 @@ export default {
   component: List,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-    lists: { control: 'boolean'}
+    array: { control: 'object' },
+    bottomgap: { control: 'number' },
+    liststyle: { control: 'boolean' },
+    icon: { control: 'text' },
+    size: {
+      control: { type: 'radio' },
+      options: ['large', 'small', 'normal'],
+    },
+    bgcolor: { control: 'color' },
+    rounded: { control: 'boolean' },
+    shadow: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    hideicon: { control: 'boolean' },
+    outline: { control: 'boolean' },
+    opacity: { control: 'number' },
+    iconcolor: { control: 'color' },
+    bordercolor: { control: 'color' },
+    buttonposition: { control: 'boolean' },
+    ennumber:{control:'boolean'},
   },
 } as ComponentMeta<typeof List>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof List> = (args) => <List {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
-  color: 'secondary',
-};
 
 export const Large = Template.bind({});
 Large.args = {
@@ -61,5 +67,28 @@ Array.args = {
 export const ListStyle = Template.bind({});
 ListStyle.args = {
   children: 'ListStyle',
-  lists: true,
+  liststyle: true,
 };
+
+export const BGColor = Template.bind({});
+BGColor.args = {
+  children: 'BGColor',
+  bgcolor: '#ffb0b0',
+};
+export const Bottomgap = Template.bind({});
+Bottomgap.args = {
+  children: 'Bottomgap',
+  bottomgap: 0
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  children: 'Icon',
+  icon: 'Calendar',
+};
+
+export const Ennumber = Template.bind({});
+Ennumber.args = {
+  children: 'Ennumber',
+  ennumber:true
+}

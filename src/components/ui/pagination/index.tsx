@@ -1,59 +1,77 @@
 import React from 'react';
-import './pagination.css'
-// import clsx from 'clsx';
+import clsx from 'clsx';
+import Contrast from '../../../components/ui/contrast';
 
+const colorcoltrast = (lum: number): string => {
+  if (lum > 0.5) {
+    return '#000000';
+  } else {
+    return '#ffffff';
+  }
+};
 export interface IPagination {
-  color?: 'primary' | 'secondary' | 'gray';
-  list?: {number:number}[];
+  bgcolor?: string;
+  list?: string[];
   rounded?: boolean;
   outline?: boolean;
   pointer?: boolean;
   size?: 'small' | 'normal' | 'large';
   linkcolor?: boolean;
+  disable?: boolean;
+  bordercolor?: string;
+  hidenext: boolean;
+  hideprev: boolean;
 }
 
-
 const Pagination: React.FC<IPagination> = (props) => {
+  let cbc = 0;
 
-//   const mouseover = () => {
-//     props.linkcolor===true
-// }
+  const getPaginationList = (list:string[], next:boolean, prev:boolean):String[] => {
+    if (next ) {
+      return list.slice(0,-1)
+    } else if (prev) {
+      return list.slice(1)
+    } else if (next===false && prev===false) {
+      return list
+    }else {
+      return list
+    }
+  }
+
+  if (props.bgcolor) {
+    cbc = Contrast(props.bgcolor);
+  }
   return (
     <div
-      style={{
-        background: props.color === 'secondary' ? 'orange' : 'lightblue',
-        borderRadius: props.rounded ? 100 : 2,
-        outline: props.outline ? 'dashed' : 'double',
-        width: props.size == 'small' ? 300 : 420,
-        height: props.size == 'small' ? 30 : 50,
-        cursor: props.pointer ? 'pointer' : '',
-        // backgroundColor:props.disable? 'gray':'',
-        display: 'flex',
-        padding:3
-      }}
+      className={clsx(
+        ' inline-flex  items-center pointer-events-auto overflow-hidden',
+        props.rounded ? 'rounded-full' : 'rounded-md',
+        props.outline ? 'border-2' : 'border-0',
+        props.disable ? 'cursor-not-allowed' : '',
+        props.disable ? 'opacity-50' : ''
+      )}
     >
       {console.log(props.list)}
       {!!props.list &&
-        props.list.map((i) => (
+        getPaginationList(props.list,props.hidenext,props.hideprev).map((i) => (
           <a
+            className={clsx(
+              'hover:opacity-70 border visited:bg-slate-700',
+              props.size === 'small' ? 'px-3' : 'px-4',
+              props.size === 'small' ? 'py-1' : 'py-2',
+              
+              'focus:outline-violet-300 focus:ring focus:ring-violet-300 focus:opacity-20'
+            )}
             style={{
-              background: props.linkcolor ? 'red' : 'green',
-              margin: 3,
-              display: 'flex',
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'column',
-              textDecoration: 'none',
-              borderRadius: props.rounded ? 100 : 2,
-              outline: props.outline ? 'dashed' : 'double',
-              cursor: props.pointer ? 'pointer' : '',
+              color: colorcoltrast(cbc),
+              backgroundColor: props.bgcolor,
+              borderColor: props.bordercolor,
             }}
-            href="#"
+            href='#'
             // className={clsx(props.)}
             // onMouseOver={mouseover}
           >
-            {i.number}
+            {i}
           </a>
         ))}
     </div>

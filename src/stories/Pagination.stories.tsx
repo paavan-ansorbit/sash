@@ -9,8 +9,13 @@ export default {
   component: Pagination,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-    linkcolor: { control: 'boolean' },  
+    bgcolor: { control: 'color' },
+    rounded: { control: 'boolean' },
+    shadow: { control: 'boolean' },
+    outline: { control: 'boolean' },
+    bordercolor: { control: 'color' },
+    hidenext: { control: 'boolean' },
+    hideprev: { control: 'boolean' },
   },
 } as ComponentMeta<typeof Pagination>;
 
@@ -19,16 +24,18 @@ const Template: ComponentStory<typeof Pagination> = (args) => (
   <Pagination {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
+export const BGColor = Template.bind({});
+BGColor.args = {
+  children: 'BGColor',
+  bgcolor: '#ffb0b0',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
-  color: 'secondary',
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled',
+  disable: true,
 };
+
 
 export const Large = Template.bind({});
 Large.args = {
@@ -57,11 +64,23 @@ Outline.args = {
 export const List = Template.bind({});
 List.args = {
   children: 'List',
-  list: [{number:1},{number:2},{number:3},{number:4},{number:5}],
+  list: ['Prev','1','2','3','4','5','6','7','Next'],
 };
 
 export const Linkcolor = Template.bind({});
 Linkcolor.args = {
   children: 'List',
   linkcolor: false
-}
+};
+
+export const Bordercolor = Template.bind({});
+Bordercolor.args = {
+  children: 'Bordercolor',
+  bordercolor: 'white',
+};
+export const Hidenext = Template.bind({});
+Hidenext.args = {
+  children: 'Next',
+  hidenext: true,
+  hideprev: true,
+};

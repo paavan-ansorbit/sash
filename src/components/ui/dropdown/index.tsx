@@ -1,8 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import Icon from '../icon';
 import Contrast from '../../../components/ui/contrast';
-import './dropdown.css';
 
 const colorcoltrast = (lum: number): string => {
   if (lum > 0.5) {
@@ -57,35 +55,29 @@ const Dropdown: React.FC<IDropdown> = (props) => {
         color: colorcoltrast(cbc),
         backgroundColor: props.bgcolor,
         borderColor: props.bordercolor,
+        WebkitAppearance: 'none' 
       }}
     >
-      <option value="" selected disabled hidden >
-        {props.loading ? (
-          <div
-            className="spinner-border animate-spin  inline-block w-4 h-4 mx-2  border-t-2 border-r-2 rounded-full"
-            style={{ borderColor: colorcoltrast(cbc) }}
-          ></div>
-        ) : (
-          !!props.icon && (
-            <Icon
-              icon={props.icon}
-              className={clsx(
-                'h-4',
-                'w-4',
-                props.buttonposition ? 'mr-2' : 'ml-2',
-                'fill-current',
-                props.hideicon ? 'hidden' : 'inline-block'
+      <option value="" selected disabled hidden>
+        {/* &#182; */}
+        {/* {!!props.icon && ( */}
+        {/* <Icon
+            icon={'Link'}
+            className={clsx(
+              'h-4 items-center w-4',
+              props.buttonposition ? 'mr-2' : 'ml-2',
+              'fill-current',
+              props.hideicon ? 'hidden' : 'inline-block'
               )}
               style={{ color: props.iconcolor }}
-            />
-          )
-        )}
+              /> */}
         {props.loading ? 'Loading...' : props.children}
       </option>
       {console.log(props.list)}
       {!!props.list &&
         props.list.map((i) => (
           <option
+            className={clsx('w-64')}
             style={{
               color: colorcoltrast(cbc),
             }}

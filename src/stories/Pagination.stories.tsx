@@ -27,7 +27,7 @@ const Template: ComponentStory<typeof Pagination> = (args) => (
 export const BGColor = Template.bind({});
 BGColor.args = {
   children: 'BGColor',
-  bgcolor: '#ffb0b0',
+  bgcolor: '#ffffff',
 };
 
 export const Disabled = Template.bind({});
@@ -55,11 +55,6 @@ Rounded.args = {
   rounded: true,
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
 
 export const List = Template.bind({});
 List.args = {
@@ -67,17 +62,7 @@ List.args = {
   list: ['Prev','1','2','3','4','5','6','7','Next'],
 };
 
-export const Linkcolor = Template.bind({});
-Linkcolor.args = {
-  children: 'List',
-  linkcolor: false
-};
 
-export const Bordercolor = Template.bind({});
-Bordercolor.args = {
-  children: 'Bordercolor',
-  bordercolor: 'white',
-};
 export const Hidenext = Template.bind({});
 Hidenext.args = {
   children: 'Next',

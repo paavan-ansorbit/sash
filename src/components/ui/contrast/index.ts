@@ -19,7 +19,7 @@ const res = (prop: string):number => {
   let k: number = (((hexToRgb(prop).b / 255 + 0.055) / 1.055) ** 2.4) * 0.0722;
 
   let contrastRatio = i + j + k;
-  console.log(contrastRatio);
+  // console.log(contrastRatio);
   return contrastRatio;
 };
 const Contrast = (props: string):number => {

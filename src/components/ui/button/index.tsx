@@ -1,4 +1,3 @@
-
 import clsx from 'clsx';
 import Icon from '../icon';
 import Contrast from '../../../components/ui/contrast';
@@ -16,16 +15,11 @@ export interface IButtonProps {
   rounded?: boolean;
   disable?: boolean;
   icon?: string;
-  outline?: boolean;
   hideicon?: boolean;
   size?: 'small' | 'normal' | 'large';
   shadow?: boolean;
-  opacity?: number;
-  textcolor?: string;
-  iconcolor?: string;
-  bordercolor?: string;
-  buttonposition?: boolean;
-  loading?: boolean
+  iconposition?: boolean;
+  loading?: boolean;
 }
 const Button: React.FC<IButtonProps> = (props) => {
   let cbc = 0;
@@ -39,24 +33,20 @@ const Button: React.FC<IButtonProps> = (props) => {
   return (
     <button
       className={clsx(
-        'border flex flex-1 hover:opacity-70 justify-between items-center pointer-events-auto',
+        'border flex flex-1 py-1 px-3 hover:opacity-70 justify-between items-center ',
         props.bgcolor === 'secondary'
           ? 'border-orange-400'
           : 'border-yellow-400',
         props.rounded ? 'rounded-full' : 'rounded-md',
-        props.size === 'small' ? 'px-3' : 'px-4',
-        props.size === 'small' ? 'py-1' : 'py-2',
+        props.size === 'small' ? 'text-xm' : 'text-lg',
         props.shadow ? 'shadow-xl' : 'shadow-none',
-        props.outline ? 'border-2' : 'border-0',
-        props.disable ? 'cursor-not-allowed' : '',
+        props.disable ? 'cursor-not-allowed' : 'cursor-default',
         props.disable ? 'opacity-50' : '',
-        `opacity-${props.opacity}`,
-        props.buttonposition ? 'flex-row' : 'flex-row-reverse'
+        props.iconposition ? 'flex-row' : 'flex-row-reverse'
       )}
       style={{
         color: colorcoltrast(cbc),
         backgroundColor: props.bgcolor,
-        borderColor: props.bordercolor,
       }}
     >
       {props.loading ? (
@@ -71,11 +61,12 @@ const Button: React.FC<IButtonProps> = (props) => {
             className={clsx(
               'h-4',
               'w-4',
-              props.buttonposition ? 'mr-2' : 'ml-2',
-              'fill-current',
-              props.hideicon ? 'hidden' : 'inline-block'
+              'inline-block',
+              props.iconposition ? 'mr-2' : 'ml-2',
+              'fill-current'
+              // props.hideicon ? 'hidden' : 'inline-block'
             )}
-            style={{ color: props.iconcolor }}
+            style={{ color: colorcoltrast(cbc) }}
           />
         )
       )}

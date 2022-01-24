@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 import {
   Calendar,
   Upload,
@@ -12,7 +12,7 @@ import {
   Arrowdown,
 } from '../../../icons';
 // import * as Icons from '../../../icons';
-interface IconProps {
+interface IconProps extends SVGProps<SVGSVGElement>{
   className: string;
   style: React.CSSProperties;
   icon: string;
@@ -31,14 +31,14 @@ const IconMappping: { [key: string]: any } = {
   Arrowdown,
 };
 
-function Icon({ icon, className ,style}: IconProps) {
+function Icon({ icon, className ,style, ...rest}: IconProps) {
   if (!IconMappping[icon]) return null;
 
   const IconComponent = IconMappping[icon];
 
   return (
     <>
-      <IconComponent  className={className} style={style}/>
+      <IconComponent {...rest}  className={className} style={style}/>
     </>
   );
 }

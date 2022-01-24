@@ -11,18 +11,12 @@ export default {
     icon: { control: 'text' },
     size: {
       control: { type: 'radio' },
-      options: ['large', 'small', 'normal'],
+      options: ['small', 'normal', 'large'],
     },
     rounded: { control: 'boolean' },
     shadow: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    hideicon: { control: 'boolean' },
-    outline: { control: 'boolean' },
-    opacity: { control: 'number' },
-    textcolor: { control: 'color' },
-    iconcolor: { control: 'color' },
-    bordercolor: { control: 'color' },
-    buttonposition: { control: 'boolean' },
+    disable: { control: 'boolean' },
+    iconposition: { control: 'boolean' },
     loading: { control: 'boolean' },
   },
 } as ComponentMeta<typeof Button>;
@@ -32,7 +26,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const BGColor = Template.bind({});
 BGColor.args = {
   children: 'BGColor',
-  bgcolor: '#ffb0b0',
+  bgcolor: '#ffffff',
 };
 
 export const Large = Template.bind({});
@@ -53,16 +47,10 @@ Rounded.args = {
   rounded: true,
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Disabled',
-  disable: true
+  disable: false,
 };
 
 export const Icon = Template.bind({});
@@ -71,48 +59,20 @@ Icon.args = {
   icon: 'Calendar',
 };
 
-export const Hideicon = Template.bind({});
-Hideicon.args = {
-  children: 'HideIcon',
-  hideicon: false
-};
-
 export const Shadow = Template.bind({});
 Shadow.args = {
   children: 'Shadow',
-  shadow: true
+  shadow: true,
 };
 
-export const Opacity = Template.bind({});
-Opacity.args = {
-  children: 'Opacity',
-};
-
-export const Textcolor = Template.bind({});
-Textcolor.args = {
-  children: 'Textcolor',
-  textcolor: 'black'
-};
-export const IconColor = Template.bind({});
-IconColor.args = {
-  children: 'IconColor',
-  iconcolor: 'black'
-};
-
-export const  Bordercolor = Template.bind({});
-Bordercolor.args = {
-  children: 'Bordercolor',
-  bordercolor: 'white'
-};
-
-export const ButtonPosition = Template.bind({});
-ButtonPosition.args = {
-  children: 'ButtonPosition',
-  buttonposition: true
+export const iconposition = Template.bind({});
+iconposition.args = {
+  children: 'iconposition',
+  iconposition: true,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   children: 'Loading',
-  loading: true
-}
+  loading: true,
+};

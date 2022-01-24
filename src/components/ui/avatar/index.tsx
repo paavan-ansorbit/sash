@@ -5,26 +5,24 @@ import Contrast from '../../../components/ui/contrast';
 export interface IAvatarProps {
   avatar: string;
   bgcolor?: string;
-  bordercolor?: string;
   rounded?: boolean;
-  outline?: boolean;
   size?: 'small' | 'normal' | 'large';
   iconcolor?: string;
-  hideicon?: boolean;
   icon?: string;
   shadow?: boolean;
   iconDirection: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
-function getIconDirection(iconDirection: string | undefined,round:number) {
+function getIconDirection(iconDirection: string | undefined) {
+
   switch (iconDirection) {
     case 'top-left':
-      return `-top-${round} -left-${round}`;
+      return `-top-1 -left-1`;
     case 'top-right':
-      return `-top-${round} -right-${round}`;
+      return `-top-1 -right-1`;
     case 'bottom-left':
-      return `-bottom-${round} -left-${round}`;
+      return `-bottom-1 -left-1`;
     case 'bottom-right':
-      return `-bottom-${round} -right-${round}`;
+      return `-bottom-1 -right-1`;
   }
 }
 
@@ -48,12 +46,8 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
           props.rounded ? 'rounded-full' : 'rounded-md',
           props.size === 'small' ? 'w-14' : 'w-20',
           props.size === 'small' ? 'h-14' : 'h-20',
-          props.shadow ? 'shadow-xl' : 'shadow-none',
-          props.outline ? 'border-2' : 'border-0'
+          props.shadow ? 'shadow-xl' : 'shadow-none'
         )}
-        style={{
-          borderColor: props.bordercolor,
-        }}
         src={props.avatar}
         alt="hello world"
       />
@@ -65,11 +59,11 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
             props.size === 'small' ? 'h-5' : 'h-7',
             props.size === 'small' ? 'w-5' : 'w-7',
             props.size === 'small' ? 'p-1' : 'p-2',
-            'fill-current inline-block z-50 rounded-full absolute',
-            getIconDirection(props.iconDirection,props.rounded?1:2),
+            'fill-current inline-block  z-50 rounded-full absolute',
+            getIconDirection(props.iconDirection),
             // 'bg-violet-400',
 
-            props.hideicon ?'hidden':  'inline-block'
+            // props.hideicon ?'hidden':  'inline-block'
           )}
           style={{
             color: colorcoltrast(cbc),

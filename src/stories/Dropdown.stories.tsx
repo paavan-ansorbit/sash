@@ -15,14 +15,8 @@ export default {
     },
     rounded: { control: 'boolean' },
     shadow: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    hideicon: { control: 'boolean' },
-    outline: { control: 'boolean' },
-    opacity: { control: 'number' },
     textcolor: { control: 'color' },
-    iconcolor: { control: 'color' },
-    bordercolor: { control: 'color' },
-    buttonposition: { control: 'boolean' },
+    iconposition: { control: 'boolean' },
     loading: { control: 'boolean' },
   },
 } as ComponentMeta<typeof Dropdown>;
@@ -55,28 +49,10 @@ Rounded.args = {
   rounded: true,
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  children: 'Disabled',
-  disable: true,
-};
-
 export const Icon = Template.bind({});
 Icon.args = {
   children: 'Icon',
   icon: 'Calendar',
-};
-
-export const Hideicon = Template.bind({});
-Hideicon.args = {
-  children: 'HideIcon',
-  hideicon: false,
 };
 
 export const Shadow = Template.bind({});
@@ -85,32 +61,10 @@ Shadow.args = {
   shadow: true,
 };
 
-export const Opacity = Template.bind({});
-Opacity.args = {
-  children: 'Opacity',
-};
-
-export const Textcolor = Template.bind({});
-Textcolor.args = {
-  children: 'Textcolor',
-  textcolor: 'black',
-};
-export const IconColor = Template.bind({});
-IconColor.args = {
-  children: 'IconColor',
-  iconcolor: 'black',
-};
-
-export const Bordercolor = Template.bind({});
-Bordercolor.args = {
-  children: 'Bordercolor',
-  bordercolor: 'white',
-};
-
-export const ButtonPosition = Template.bind({});
-ButtonPosition.args = {
-  children: 'ButtonPosition',
-  buttonposition: true,
+export const iconposition = Template.bind({});
+iconposition.args = {
+  children: 'iconposition',
+  iconposition: true,
 };
 
 export const Loading = Template.bind({});
@@ -122,5 +76,5 @@ Loading.args = {
 export const List = Template.bind({});
 List.args = {
   children: 'List',
-  list: [{ name: 'hreusw' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
+  list: [{ name: 'hreuswkjzxvc' }, { name: 'sdhfg' }, { name: 'ahdsah' }],
 };

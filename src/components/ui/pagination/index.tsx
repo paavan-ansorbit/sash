@@ -13,12 +13,8 @@ export interface IPagination {
   bgcolor?: string;
   list?: string[];
   rounded?: boolean;
-  outline?: boolean;
-  pointer?: boolean;
   size?: 'small' | 'normal' | 'large';
-  linkcolor?: boolean;
   disable?: boolean;
-  bordercolor?: string;
   hidenext: boolean;
   hideprev: boolean;
 }
@@ -46,12 +42,10 @@ const Pagination: React.FC<IPagination> = (props) => {
       className={clsx(
         ' inline-flex  items-center pointer-events-auto overflow-hidden',
         props.rounded ? 'rounded-full' : 'rounded-md',
-        props.outline ? 'border-2' : 'border-0',
         props.disable ? 'cursor-not-allowed' : '',
         props.disable ? 'opacity-50' : ''
       )}
     >
-      {console.log(props.list)}
       {!!props.list &&
         getPaginationList(props.list,props.hidenext,props.hideprev).map((i) => (
           <a
@@ -65,11 +59,8 @@ const Pagination: React.FC<IPagination> = (props) => {
             style={{
               color: colorcoltrast(cbc),
               backgroundColor: props.bgcolor,
-              borderColor: props.bordercolor,
             }}
             href='#'
-            // className={clsx(props.)}
-            // onMouseOver={mouseover}
           >
             {i}
           </a>

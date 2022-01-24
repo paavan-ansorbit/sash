@@ -45,9 +45,3 @@ Rounded.args = {
   rounded: true,
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
-

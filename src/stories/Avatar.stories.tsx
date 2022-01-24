@@ -11,14 +11,12 @@ export default {
     avatar: {control:'text'},
     bgcolor: { control: 'color' },
     rounded: { control: 'boolean' },
+    icon: { control:'text'},
     shadow: { control: 'boolean' },
-    bordercolor: { control: 'color' },
     size: {
       control: { type: 'radio' },
       options: ['large', 'small', 'normal'],
     },
-    outline: { control: 'boolean' },
-    hideicon: { control: 'boolean' },
 
     iconDirection: {
       control: { type: 'radio' },
@@ -53,11 +51,6 @@ Rounded.args = {
   rounded: true,
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
 
 export const Shadow = Template.bind({});
 Shadow.args = {
@@ -68,7 +61,6 @@ Shadow.args = {
 export const Icon = Template.bind({});
 Icon.args = {
   children: 'Icon',
-  hideicon: true,
   icon: 'Calendar',
   iconDirection: 'bottom-right',
 };
@@ -83,5 +75,5 @@ IconColor.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   children: 'BGColor',
-  bgcolor: '#ffb0b0',
+  bgcolor: '#ffffff',
 };

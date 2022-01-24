@@ -18,16 +18,8 @@ export default {
       options: ['large', 'small', 'normal'],
     },
     bgcolor: { control: 'color' },
-    rounded: { control: 'boolean' },
-    shadow: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    hideicon: { control: 'boolean' },
-    outline: { control: 'boolean' },
-    opacity: { control: 'number' },
-    iconcolor: { control: 'color' },
-    bordercolor: { control: 'color' },
-    buttonposition: { control: 'boolean' },
-    ennumber:{control:'boolean'},
+    iconposition: { control: 'boolean' },
+    // ennumber:{control:'boolean'},
   },
 } as ComponentMeta<typeof List>;
 
@@ -46,18 +38,6 @@ Small.args = {
   size: 'small',
 };
 
-export const Rounded = Template.bind({});
-Rounded.args = {
-  children: 'Rounded',
-  rounded: true,
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-  children: 'Outline',
-  outline: true,
-};
-
 export const Array = Template.bind({});
 Array.args = {
   children: 'Array',
@@ -73,12 +53,12 @@ ListStyle.args = {
 export const BGColor = Template.bind({});
 BGColor.args = {
   children: 'BGColor',
-  bgcolor: '#ffb0b0',
+  bgcolor: '#ffffff',
 };
 export const Bottomgap = Template.bind({});
 Bottomgap.args = {
   children: 'Bottomgap',
-  bottomgap: 0
+  bottomgap: 0,
 };
 
 export const Icon = Template.bind({});
@@ -90,5 +70,5 @@ Icon.args = {
 export const Ennumber = Template.bind({});
 Ennumber.args = {
   children: 'Ennumber',
-  ennumber:true
-}
+  ennumber: true,
+};
